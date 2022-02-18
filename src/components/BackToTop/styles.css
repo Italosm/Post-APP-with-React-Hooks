@@ -1,4 +1,6 @@
 .scrollTop {
+  border-radius: 50%;
+  border-style: solid;
   font-size: 50px;
   cursor: pointer;
   animation: fadeIn 0.3s;
