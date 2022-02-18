@@ -5,6 +5,7 @@ import { loadPosts } from "../../utils/load-posts";
 import { Button } from "../../components/Button";
 import { TextInput } from "../../components/TextInput";
 import { useEffect, useState, useCallback } from "react";
+import ScrollArrow from "../../components/BackToTop";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,6 @@ export const Home = () => {
   const [searchValue, setSearchValue] = useState("");
   const [loadedPosts, setLoadedPosts] = useState(false);
   const noMorePosts = page + postsPerPage >= allPosts.length;
-
 
   const handleLoadPosts = useCallback(async (page, postsPerPage) => {
     const postsAndPhotos = await loadPosts();
@@ -69,6 +69,7 @@ export const Home = () => {
               text="Load more posts"
               onClick={loadMorePosts}
             />
+            <ScrollArrow />
           </div>
         </div>
       )}
@@ -80,6 +81,7 @@ export const Home = () => {
             onClick={loadMorePosts}
           />
         )}
+        {!searchValue && <ScrollArrow />}
       </div>
     </section>
   );
