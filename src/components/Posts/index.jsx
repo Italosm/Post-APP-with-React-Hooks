@@ -21,7 +21,3 @@ Posts.propTypes = {
     }),
   ),
 };
-
-Posts.defaultProps = {
-  posts: [],
-};
