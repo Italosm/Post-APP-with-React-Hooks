@@ -20,6 +20,8 @@ describe('<TextInput />', () => {
     const insertedText = 'the value';
 
     userEvent.type(input, insertedText);
+
+    expect(input.value).toBe('any value');
     expect(fn).toHaveBeenCalledTimes(insertedText.length);
   });
 
