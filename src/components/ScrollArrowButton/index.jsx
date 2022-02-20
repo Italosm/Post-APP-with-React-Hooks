@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HiChevronDoubleUp } from 'react-icons/hi';
+import { FiChevronsUp } from 'react-icons/fi';
 import './styles.css';
 
 const ScrollArrow = () => {
@@ -20,7 +20,7 @@ const ScrollArrow = () => {
   window.addEventListener('scroll', checkScrollTop);
 
   return (
-    <HiChevronDoubleUp
+    <FiChevronsUp
       className="scrollTop"
       onClick={scrollTop}
       style={{ height: 50, display: showScroll ? 'flex' : 'none' }}

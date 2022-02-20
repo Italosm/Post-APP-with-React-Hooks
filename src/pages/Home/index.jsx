@@ -6,6 +6,7 @@ import { Button } from '../../components/Button';
 import { TextInput } from '../../components/TextInput';
 import { useEffect, useState, useCallback } from 'react';
 import ScrollArrow from '../../components/ScrollArrowButton';
+import { FiFrown } from 'react-icons/fi';
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -60,7 +61,9 @@ export const Home = () => {
       {filteredPosts.length > 0 && <Posts posts={filteredPosts} />}
       {loadedPosts === true && filteredPosts.length === 0 && (
         <div className="not-found-container">
-          <h3>Not Found</h3>
+          <h3>
+            Not Found <FiFrown size="30px" />
+          </h3>
           <h2 className="more-posts">View more posts:</h2>
           <Posts posts={posts} />
           <div className="button-container">
