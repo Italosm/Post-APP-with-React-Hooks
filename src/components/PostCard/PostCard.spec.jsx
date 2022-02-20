@@ -11,11 +11,12 @@ const props = {
 describe('<PostCard />', () => {
   it('should render PostCard correctly', () => {
     render(<PostCard {...props} />);
-    expect(screen.getByRole('img', { name: props.title })).toHaveAttribute('src', props.cover);
-    expect(screen.getByRole('heading', { name: /title 1/i })).toBeInTheDocument();
+
+    expect(screen.getByAltText(/title 1/i)).toHaveAttribute('src', 'img/img.png');
+    expect(screen.getByRole('heading', { name: /title/i })).toBeInTheDocument();
     expect(screen.getByText('body 1')).toBeInTheDocument();
-    expect(screen.getAllByAltText(/title 1/i));
   });
+
   it('should match snapshot', () => {
     const { container } = render(<PostCard {...props} />);
     expect(container.firstChild).toMatchSnapshot();
