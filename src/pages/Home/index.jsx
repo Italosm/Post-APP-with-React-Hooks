@@ -5,7 +5,7 @@ import { loadPosts } from '../../utils/load-posts';
 import { Button } from '../../components/Button';
 import { TextInput } from '../../components/TextInput';
 import { useEffect, useState, useCallback } from 'react';
-import ScrollArrow from '../../components/ScrollArrow';
+import ScrollArrow from '../../components/ScrollArrowButton';
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
