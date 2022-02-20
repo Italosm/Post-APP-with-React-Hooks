@@ -1,18 +1,18 @@
-import "./styles.css";
+import './styles.css';
 
-import { Posts } from "../../components/Posts";
-import { loadPosts } from "../../utils/load-posts";
-import { Button } from "../../components/Button";
-import { TextInput } from "../../components/TextInput";
-import { useEffect, useState, useCallback } from "react";
-import ScrollArrow from "../../components/BackToTop";
+import { Posts } from '../../components/Posts';
+import { loadPosts } from '../../utils/load-posts';
+import { Button } from '../../components/Button';
+import { TextInput } from '../../components/TextInput';
+import { useEffect, useState, useCallback } from 'react';
+import ScrollArrow from '../../components/ScrollArrow';
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   const [page, setPage] = useState(0);
   const [postsPerPage] = useState(3);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const [loadedPosts, setLoadedPosts] = useState(false);
   const noMorePosts = page + postsPerPage >= allPosts.length;
 
@@ -41,7 +41,7 @@ export const Home = () => {
     setSearchValue(value);
   };
 
-  const filteredPosts = !!searchValue
+  const filteredPosts = searchValue
     ? allPosts.filter((post) => {
         return post.title.toLowerCase().includes(searchValue.toLowerCase());
       })
@@ -64,23 +64,13 @@ export const Home = () => {
           <h2 className="more-posts">View more posts:</h2>
           <Posts posts={posts} />
           <div className="button-container">
-            <Button
-              disabled={noMorePosts}
-              text="Load more posts"
-              onClick={loadMorePosts}
-            />
+            <Button disabled={noMorePosts} text="Load more posts" onClick={loadMorePosts} />
             <ScrollArrow />
           </div>
         </div>
       )}
       <div className="button-container">
-        {!searchValue && (
-          <Button
-            disabled={noMorePosts}
-            text="Load more posts"
-            onClick={loadMorePosts}
-          />
-        )}
+        {!searchValue && <Button disabled={noMorePosts} text="Load more posts" onClick={loadMorePosts} />}
         {!searchValue && <ScrollArrow />}
       </div>
     </section>
