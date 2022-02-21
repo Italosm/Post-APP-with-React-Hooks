@@ -6,6 +6,12 @@
   padding: 30px;
 }
 
+.loading-posts-container {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
 .button-container {
   min-height: 100px;
   display: flex;

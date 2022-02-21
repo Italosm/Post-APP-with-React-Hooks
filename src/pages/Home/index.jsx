@@ -59,6 +59,11 @@ export const Home = () => {
         <TextInput searchValue={searchValue} handleChange={handleChange} />
       </div>
       {filteredPosts.length > 0 && <Posts posts={filteredPosts} />}
+      {loadedPosts === false && (
+        <div className="loading-posts-container">
+          <h3>Loading Posts</h3>
+        </div>
+      )}
       {loadedPosts === true && filteredPosts.length === 0 && (
         <div className="not-found-container">
           <h3>
